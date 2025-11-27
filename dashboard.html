@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Dashboard — River Coastal Clean-up Tracker</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="icon" href="../image/logo.png" type="image/png">
+</head>
+<body>
+
+  <div class="login-container" id="loginPage">
+    <div class="login-form">
+      <h2>River Coastal Clean-up Tracker</h2>
+
+      <!-- LOGIN VIEW -->
+      <div id="loginView">
+        <div class="form-group"><label>Username</label><input id="username" class="form-control" autocomplete="username"></div>
+        <div class="form-group"><label>Password</label><input id="password" type="password" class="form-control" autocomplete="current-password"></div>
+        <div id="loginHint" class="login-hint">Hint: username <strong>admin</strong>, password <strong>password</strong></div>
+        <button id="loginBtn" class="btn btn-primary">Login</button>
+        <div style="text-align:center;margin-top:12px;"><a href="#" id="showSignup">Don't have an account? Sign up</a></div>
+      </div>
+
+      <!-- SIGNUP VIEW (hidden by default) -->
+      <div id="signupView" style="display:none;">
+        <div class="form-group"><label>First name</label><input id="newFirstName" class="form-control" autocomplete="given-name"></div>
+        <div class="form-group"><label>Last name</label><input id="newLastName" class="form-control" autocomplete="family-name"></div>
+        <div class="form-group"><label>Gender</label><select id="newGender" class="form-control"><option value="">Select</option><option>Male</option><option>Female</option><option>Other</option></select></div>
+        <div class="form-group"><label>Contact number</label><input id="newContact" class="form-control" autocomplete="tel"></div>
+        <div class="form-group"><label>Email</label><input id="newEmail" class="form-control" autocomplete="email" type="email"></div>
+        <div class="form-group"><label>Short description</label><textarea id="newDesc" class="form-control" rows="2" placeholder="A short bio or description"></textarea></div>
+        <div class="form-group"><label>Choose a username</label><input id="newUsername" class="form-control" autocomplete="username"></div>
+        <div class="form-group"><label>Password (min 6 chars)</label><input id="newPassword" type="password" class="form-control" autocomplete="new-password"></div>
+        <div class="form-group"><label>Confirm password</label><input id="newPasswordConfirm" type="password" class="form-control" autocomplete="new-password"></div>
+        <div id="signupHint" class="login-hint">Create an account to save and manage events.</div>
+        <button id="signupBtn" class="btn btn-primary">Create account</button>
+        <div style="text-align:center;margin-top:12px;"><a href="#" id="backToLogin">Already have an account? Log in</a></div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="app-container" id="appContainer">
+    <div class="navbar"><div class="navbar-brand"><img src="../image/logo.png" alt="Cleanup logo" class="site-logo"><span>River Coastal Clean-up Tracker</span></div><div class="navbar-user"><a href="#" id="userProfileLink" style="color:#fff;text-decoration:none;">Welcome, User</a> <button id="logoutBtn" class="logout-btn">Logout</button></div></div>
+
+    <div class="main-container">
+      <div class="sidebar"><ul class="sidebar-menu"><li class="active"><a href="dashboard.html">Dashboard</a></li><li><a href="events.html">Events</a></li><li><a href="new_event.html">New Event</a></li><li><a href="reports.html">Reports</a></li><li><a href="map.html">Map</a></li></ul></div>
+      <div class="content">
+        <div class="page active" id="dashboard">
+          <h1>Dashboard</h1>
+          <div class="dashboard-cards">
+            <div class="card"><h3>Total Events</h3><div class="value" id="totalEvents">0</div></div>
+            <div class="card"><h3>Events This Month</h3><div class="value" id="monthEvents">0</div></div>
+            <div class="card"><h3>Total Waste Collected</h3><div class="value" id="totalWaste">0 kg</div></div>
+            <div class="card"><h3>Volunteers</h3><div class="value" id="totalVolunteers">0</div></div>
+          </div>
+
+          <div class="form-section"><div class="section-title">Recent Activity News</div><div id="recentNews" style="min-height:120px; display:flex; align-items:center; justify-content:center; color:#666;">No recent activity news</div></div>
+        </div>
+      </div>
+      <div class="right-sidebar">
+        <div class="section-title">Messages</div>
+        <div id="messages" style="margin-bottom:14px; color:#333;">No messages</div>
+        <div class="section-title">Notifications</div>
+        <div id="notifications" style="margin-bottom:12px; color:#333;"></div>
+        <div class="section-title">Activity Feed</div>
+        <div id="activityFeed" style="color:#333;"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="../js/app.js"></script>
+  <script src="../js/dashboard.js"></script>
+</body>
+</html>
+<!--
+on the right hand side bar for mesages, can you add a search bar that allows you to search for other users to meage,
+--->
